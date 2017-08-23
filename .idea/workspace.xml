@@ -26,7 +26,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.40932643">
+                <state vertical-scroll-proportion="0.18782383">
                   <caret line="449" column="59" selection-start-line="449" selection-start-column="59" selection-end-line="449" selection-end-column="59" />
                   <folding>
                     <element signature="n#script#3;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -79,8 +79,8 @@
           <file leaf-file-name="canvas.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/canvas.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.45125">
-                  <caret line="469" column="37" selection-start-line="469" selection-start-column="37" selection-end-line="469" selection-end-column="37" />
+                <state vertical-scroll-proportion="-0.045">
+                  <caret line="462" column="42" selection-start-line="462" selection-start-column="42" selection-end-line="462" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -226,7 +226,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1924" height="1047" extended-state="1" />
+    <frame x="-7" y="0" width="1924" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07104984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -664,7 +664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40932643">
+        <state vertical-scroll-proportion="0.18782383">
           <caret line="449" column="59" selection-start-line="449" selection-start-column="59" selection-end-line="449" selection-end-column="59" />
           <folding>
             <element signature="n#script#3;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -701,8 +701,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45125">
-          <caret line="469" column="37" selection-start-line="469" selection-start-column="37" selection-end-line="469" selection-end-column="37" />
+        <state vertical-scroll-proportion="-0.045">
+          <caret line="462" column="42" selection-start-line="462" selection-start-column="42" selection-end-line="462" selection-end-column="42" />
           <folding />
         </state>
       </provider>
