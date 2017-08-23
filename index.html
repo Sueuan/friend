@@ -8,131 +8,121 @@
     <meta name="description" content=""/>
     <link rel="stylesheet" href="css/animate.min.css"/>
     <link rel="stylesheet" href="css/layout.css">
-    <script src="js/zepto.min.js"></script>
-    <!--<script src="js/jquery.min.js"></script>
-        <script src="js/resetPage-rem.js"></script>
-        <script src="js/common.js"></script>
-    <script src="js/index.js"></script>-->
+    <!-- <script src="js/zepto.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
+    <!--  <script src="js/resetPage-rem.js"></script>
 </head>
 <!-- 第一步：首先加载一个微信JS-SDK -->
-<script src="js/jweixin-1.0.0.js"></script>
-<!-- 第2步：写一些配置 -->
-<script>
-    function autoPlayAudio() {
-        wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
-            debug: false,
-            appId: '',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function () {
-            var globalAudio = document.getElementById("media");
-            globalAudio.play();
-        });
-    }
-    ;
-    // 解决ios音乐不自动播放的问题
-    autoPlayAudio();
-</script>
-<script>
-    //初始化分享参数
-    function initShareInfo() {
-        $.ajax({
-            method: "GET",
-            url: 'http://luntan.sunlands.com/community-pc-war/base/getWxJsSign.action',
-            data: {
-                url: encodeURIComponent(location.href.split('#')[0])
-            },
-            dataType: 'jsonp',
-            success: function (data) {
-                console.log(data)
-                //  wxConfig(data.resultMessage.appId, data.resultMessage.timestamp, data.resultMessage.nonceStr, data.resultMessage.signature);
-                wx.config({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                    appId: "wx79b494663f198825", // 必填，公众号的唯一标识
-                    //  appId: data.resultMessage.appId, // 必填，公众号的唯一标识
-                    timestamp: data.resultMessage.timestamp,  // 必填，生成签名的时间戳
-                    nonceStr: data.resultMessage.nonceStr,  // 必填，生成签名的随机串
-                    signature: data.resultMessage.signature, // 必填，签名，见附录1
-                    jsApiList: [
-                        'onMenuShareTimeline',
-                        'onMenuShareAppMessage'
-                    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-                });
-                wx.ready(function () {
-                    //分享到朋友圈
-                    wx.onMenuShareTimeline({
-
-                        title: "分享标题", // 分享标题
-                        desc: "分享描述", // 分享描述
-                        link: "https://sueuan.github.io/shangde/", // 分享链接
-                        imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
-                        success: function () {
-                            // 用户确认分享后执行的回调函数
-                            alert("分享成功！");
-                        },
-                        cancel: function () {
-                            // 用户取消分享后执行的回调函数
-                            alert("分享失败！");
-                        }
+    <script src="js/jweixin-1.0.0.js"></script>
+    <!-- 第2步：写一些配置 -->
+    <script>
+        function autoPlayAudio() {
+            wx.config({
+                // 配置信息, 即使不正确也能使用 wx.ready
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function () {
+                var globalAudio = document.getElementById("media");
+                globalAudio.play();
+            });
+        }
+        ;
+        // 解决ios音乐不自动播放的问题
+        autoPlayAudio();
+    </script>
+    <script>
+        //初始化分享参数
+        function initShareInfo() {
+            $.ajax({
+                method: "GET",
+                url: 'http://luntan.sunlands.com/community-pc-war/base/getWxJsSign.action',
+                data: {
+                    url: encodeURIComponent(location.href.split('#')[0])
+                },
+                dataType: 'jsonp',
+                success: function (data) {
+                    console.log(data)
+                    //  wxConfig(data.resultMessage.appId, data.resultMessage.timestamp, data.resultMessage.nonceStr, data.resultMessage.signature);
+                    wx.config({
+                        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: "wx79b494663f198825", // 必填，公众号的唯一标识
+                        //  appId: data.resultMessage.appId, // 必填，公众号的唯一标识
+                        timestamp: data.resultMessage.timestamp,  // 必填，生成签名的时间戳
+                        nonceStr: data.resultMessage.nonceStr,  // 必填，生成签名的随机串
+                        signature: data.resultMessage.signature, // 必填，签名，见附录1
+                        jsApiList: [
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage'
+                        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
                     });
-                    //分享给朋友
-                    wx.onMenuShareAppMessage({
-                        title: "分享标题", // 分享标题
-                        desc: "分享描述", // 分享描述
-                        link: "https://sueuan.github.io/shangde/", // 分享链接
-                        imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
-                        //				type: '', // 分享类型,music、video或link，不填默认为link
-                        //				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                        success: function () {
-                            // 用户确认分享后执行的回调函数
-                            alert("分享成功！");
-                        },
-                        cancel: function () {
-                            // 用户取消分享后执行的回调函数
-                            alert("分享失败！");
-                        }
-                    });
+                    wx.ready(function () {
+                        //分享到朋友圈
+                        wx.onMenuShareTimeline({
 
-                });
-            }
-        });
-    }
-    // initShareInfo()
-</script>
-<script>
-    /*
-     var u = navigator.userAgent, app = navigator.appVersion;
-     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
-     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-     if (isiOS) {
-     // 禁止iphone浏览器拖动反弹（橡皮筋效果）
-     function stopScrolling(touchEvent) {
-     touchEvent.preventDefault();
-     }
-     document.addEventListener('touchstart', stopScrolling, false);
-     document.addEventListener('touchmove', stopScrolling, false);
-     //  alert(123);
-     }
-     */
-    function resetPage() {
+                            title: "分享标题", // 分享标题
+                            desc: "分享描述", // 分享描述
+                            link: "https://sueuan.github.io/shangde/", // 分享链接
+                            imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                                alert("分享成功！");
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                                alert("分享失败！");
+                            }
+                        });
+                        //分享给朋友
+                        wx.onMenuShareAppMessage({
+                            title: "分享标题", // 分享标题
+                            desc: "分享描述", // 分享描述
+                            link: "https://sueuan.github.io/shangde/", // 分享链接
+                            imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
+                            //				type: '', // 分享类型,music、video或link，不填默认为link
+                            //				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                                alert("分享成功！");
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                                alert("分享失败！");
+                            }
+                        });
+
+                    });
+                }
+            });
+        }
+        // initShareInfo()
+    </script>
+    <script>
+        /*
+         var u = navigator.userAgent, app = navigator.appVersion;
+         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+         if (isiOS) {
+         // 禁止iphone浏览器拖动反弹（橡皮筋效果）
+         function stopScrolling(touchEvent) {
+         touchEvent.preventDefault();
+         }
+         document.addEventListener('touchstart', stopScrolling, false);
+         document.addEventListener('touchmove', stopScrolling, false);
+         //  alert(123);
+         }
+         */
         var htmls = document.getElementsByTagName('html')[0];
         var deviceWidth = document.documentElement.clientWidth;
         htmls.style.fontSize = deviceWidth * 0.1333333 + 'px';
         if (parseInt($('html').css('fontSize')) > 100) {
             $('html').css('fontSize', '100px')
         }
-    }
-    window.onload = function () {
-        resetPage();
-    };
-    window.onresize = function () {
-        resetPage();
-    };
-</script>
+    </script>
 <body>
 <script type="text/javascript">
     window._pt_lt = new Date().getTime();
@@ -177,6 +167,7 @@
         <div class="part_1 clearfix">
             <div class="header_user clearfix fr">
                 <h1 class="fl">尚德机构</h1>
+
                 <div class="fl">
 
                 </div>
@@ -192,6 +183,7 @@
                 </div>
                 <div style="min-height: 7.5rem;" class="rigth_con fl">
                     <h1>嬴政</h1>
+
                     <p class="title">
                         六国统一
                         <br/>
@@ -262,6 +254,7 @@
                 </div>
                 <div style="min-height: 7.2rem;" class="rigth_con fl">
                     <h1>昭君_王 <img class="expression_name" src="images/expression_3.png" alt=""/></h1>
+
                     <p class="title">
                         匈奴苦寒之地，我要带几件衣服，
                         <br/>
@@ -328,12 +321,14 @@
                 </div>
                 <div style="min-height:5.99rem" class="rigth_con fl">
                     <h1>鲁肃</h1>
+
                     <p class="title">
                         子明，士别三日当刮目相看啊！
                         <br/>
                         厉害了我的弟！
                         <img class=" expression_name  " src="images/expression_16.png" alt=""/>
                     </p>
+
                     <div class="img_box clearfix">
                         <img class="img_1 fl" src="images/img_3.png" alt=""/>
                     </div>
@@ -352,7 +347,8 @@
                                 <img class="fl like_icon" src="images/like.png" alt=""/>
                                 <span class="fl">孙权</span><i class="fl">，</i>
                                 <span class="fl">吕蒙</span><i class="fl">，</i>
-                                <span class="fl">陆逊  </span>
+                                <span class="fl">陆逊  </span><i class="fl">，</i>
+                                <span class="fl">我</span>
                             </div>
                             <div class="comment">
                                 <dl>
@@ -455,8 +451,9 @@
                                     </dt>
                                     <dt>
                                         <span> 王维</span>
-                                        <i>：@all 用了尚德机构App，人人都能考上本科</i>
-                                        <img class="expression" src="images/expression_9.png" alt=""/>
+                                        <i></i>
+                                        <div style="display: none" class="aa">：@all 用了尚德机构App，人人都能考上本科</div>
+                                        <!--<img class="expression" src="images/expression_9.png" alt=""/>-->
                                     </dt>
                                 </dl>
 
@@ -749,13 +746,15 @@
                     <p class="title">
                         这样就可以拿到学历了！
                     </p>
+
                     <div class="img_box clearfix">
                         <img class="img_1 fl" src="images/img_9.png" alt=""/>
                     </div>
                     <div class="testing_centre">
                         <div class="times clearfix">
                             <span class="act act2 fl">改革</span>
-                            <span style="font-size: 0.23rem;width: 4.6rem" class="fl">高等学历继续教育专业设置管理办法&nbsp;&nbsp;2017年<em class="right_icon"></em></span>
+                            <span style="font-size: 0.23rem;width: 4.6rem"
+                                  class="fl">高等学历继续教育专业设置管理办法&nbsp;&nbsp;2017年<em class="right_icon"></em></span>
                             <img class="fr iocn_2" src="images/iocn_2.jpg" alt=""/>
                         </div>
                         <!-- <div class="content clearfix">
@@ -812,7 +811,9 @@
     </div>
     <!--点赞评论弹窗-->
     <div style="display: none" class="like_pop clearfix ">
-        <div class="fl like_btn"><img class="like1" src="images/like1.png" alt=""/>赞 <img class="hand" src="images/hand.png" alt=""/></div>
+        <div class="fl like_btn"><img class="like1" src="images/like1.png" alt=""/>赞 <img class="hand"
+                                                                                          src="images/hand.png" alt=""/>
+        </div>
         <div class="fr comment_btn"><img class="mes" src="images/mes.png" alt=""/>评论</div>
     </div>
 </div>
