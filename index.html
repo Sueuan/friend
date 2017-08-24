@@ -181,9 +181,9 @@
         <img src="img/a.png" class="animated lightSpeedIn kaostyle-7">
         <img src="img/b.png" class="animated lightSpeedIn kaostyle-8">
         <img src="img/c.png" class="animated lightSpeedIn kaostyle-9">
-        <img src="img/jianshu.png" class="animated lightSpeedIn kaostyle-10 imgbtn2">
-        <img src="img/guqin.png" class="animated lightSpeedIn kaostyle-11 imgbtn2">
-        <img src="img/xieshi.png" class="animated lightSpeedIn kaostyle-12 imgbtn2">
+        <img src="img/jianshu.png" class="animated lightSpeedIn kaostyle-10 imgbtn2 choose_btn ">
+        <img src="img/guqin.png" class="animated lightSpeedIn kaostyle-11 imgbtn2 choose_btn">
+        <img src="img/xieshi.png" class="animated lightSpeedIn kaostyle-12 imgbtn2 choose_btn">
     </div>
 </div>
 
@@ -209,9 +209,9 @@
         <img src="img/a.png" class="animated lightSpeedIn kaostyle-7 kaostyle-7-2">
         <img src="img/b.png" class="animated lightSpeedIn kaostyle-8 kaostyle-8-2">
         <img src="img/c.png" class="animated lightSpeedIn kaostyle-9 kaostyle-9-2">
-        <img src="img/guqin2-1.png" class="animated lightSpeedIn kaostyle-10 kaostyle-10-2 imgbtn3">
-        <img src="img/guqin2-2.png" class="animated lightSpeedIn kaostyle-11 kaostyle-11-2 imgbtn3">
-        <img src="img/guqin2-3.png" class="animated lightSpeedIn kaostyle-12 kaostyle-12-2 imgbtn3">
+        <img src="img/guqin2-1.png" class="animated lightSpeedIn kaostyle-10 kaostyle-10-2 imgbtn3 choose_btn">
+        <img src="img/guqin2-2.png" class="animated lightSpeedIn kaostyle-11 kaostyle-11-2 imgbtn3 choose_btn">
+        <img src="img/guqin2-3.png" class="animated lightSpeedIn kaostyle-12 kaostyle-12-2 imgbtn3 choose_btn">
     </div>
 </div>
 
@@ -229,9 +229,9 @@
         <img src="img/a.png" class="animated lightSpeedIn kaostyle-7 kaostyle-7-3">
         <img src="img/b.png" class="animated lightSpeedIn kaostyle-8 kaostyle-8-3">
         <img src="img/c.png" class="animated lightSpeedIn kaostyle-9 kaostyle-9-3">
-        <img src="img/guqin3-1.png" class="animated lightSpeedIn kaostyle-10 kaostyle-10-3 imgbtn4">
-        <img src="img/guqin3-2.png" class="animated lightSpeedIn kaostyle-11 kaostyle-11-3 imgbtn4">
-        <img src="img/guqin3-3.png" class="animated lightSpeedIn kaostyle-12 kaostyle-12-3 imgbtn4">
+        <img src="img/guqin3-1.png" class="animated lightSpeedIn kaostyle-10 kaostyle-10-3 imgbtn4 choose_btn">
+        <img src="img/guqin3-2.png" class="animated lightSpeedIn kaostyle-11 kaostyle-11-3 imgbtn4 choose_btn">
+        <img src="img/guqin3-3.png" class="animated lightSpeedIn kaostyle-12 kaostyle-12-3 imgbtn4 choose_btn">
     </div>
 </div>
 
@@ -897,12 +897,13 @@
                                         <span>我</span>
                                         <i>：我高中毕业5年，还能考本科吗？</i>
                                     </dt>
-                                    <dt class="clearfix">
+                                    <dt style="height:1.15rem ;" class="clearfix">
                                         <span>小康老师</span>
                                         <i>回复</i>
                                         <span>我</span>
-                                        <i>：当然可以，现在下载App，每天都有免费的本科课程，我给你发二维码你扫一扫</i>
-                                        <img class="expression_name" src="img/expression_11.png" alt=""/>
+                                        <i></i>
+                                    <div style="display: none" class="bb">：当然可以，现在下载App，每天都有免费的本科课程，我给你发二维码你扫一扫</div>
+                                    <!-- <img class="expression_name" src="img/expression_11.png" alt=""/>-->
                                     </dt>
                                 </dl>
                             </div>
@@ -912,6 +913,7 @@
             </li>
         </ul>
     </div>
+    <img style="display: none" class="my_btn" src="img/btn.png" alt=""/>
     <!--点赞评论弹窗-->
     <div style="display: none" class="like_pop clearfix ">
         <div class="fl like_btn"><img class="like1" src="img/like1.png" alt=""/>赞 <img class="hand"
@@ -961,49 +963,59 @@
             function msg() {
                 var ys = $(".kaostyle-5")
                 if (!($(ys).is(":animated"))) {
-                    $(ys).animate({"top": "4.3rem",}, 200).animate({"top": "4.2rem",}, 200)
-                            .animate({"top": "4.2rem",}, 200).animate({"top": "4.3rem",}, 200)
-                            .animate({"top": "4.2rem",}, 200).animate({"top": "4.3rem",}, 200)
+                    $(ys).animate({"top": "4.0rem",}, 200).animate({"top": "3.9rem",}, 200)
+                            .animate({"top": "3.9rem",}, 200).animate({"top": "4.0rem",}, 200)
+                            .animate({"top": "3.9rem",}, 200).animate({"top": "4.0rem",}, 200)
                     //.animate({"top":"-1px",},200).animate({"top":"-0px",},200);
                 }
             }
-        }, 3000);
+        }, 1000);
     });
 </script>
 <!--第三页js-->
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".imgbtn2").click(function () {
-            $(".page2").hide();
-            $(".page3").show();
-            setInterval(function () {
-                $(".kaostyle-2-2").fadeOut(1000).fadeIn(700);
-            }, 1000);
-            setInterval(function () {
-                $(".kaostyle-3-2").fadeOut(1200).fadeIn(200);
-            }, 2000);
-            setInterval(function () {
-                $(".kaostyle-4-2").fadeOut(2000).fadeIn(600);
-            }, 3000);
-            setInterval(function () {
-                $(".kaostyle-4-3").fadeOut(1500).fadeIn(200);
-            }, 4000);
-            setInterval(function () {
-                $(".kaostyle-4-2-2").fadeOut(1100).fadeIn(200);
-            }, 5000);
-            setInterval(function () {
-                msg();
-            }, 200)
-            function msg() {
-                var ys = $(".animt-peop-li2")
-                if (!($(ys).is(":animated"))) {
-                    $(ys).animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
-                            .animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
-                            .animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
-                    //.animate({"top":"-1px",},200).animate({"top":"-0px",},200);
+        $(".choose_btn").on("click", function () {
+            var imgurl = $(this).attr("src");
+            var maxlength = imgurl.length;
+           // console.log(imgurl)
+           // console.log(maxlength)
+            var changsrc = imgurl.substr(0, (maxlength - 4));
+           // console.log(changsrc)
+            $(this).attr("src", changsrc + "_1.png")
+        })
+        $(".imgbtn2").on("click", function () {
+            setTimeout(function () {
+                $(".page2").hide();
+                $(".page3").show();
+                setInterval(function () {
+                    $(".kaostyle-2-2").fadeOut(1000).fadeIn(700);
+                }, 1000);
+                setInterval(function () {
+                    $(".kaostyle-3-2").fadeOut(1200).fadeIn(200);
+                }, 2000);
+                setInterval(function () {
+                    $(".kaostyle-4-2").fadeOut(2000).fadeIn(600);
+                }, 3000);
+                setInterval(function () {
+                    $(".kaostyle-4-3").fadeOut(1500).fadeIn(200);
+                }, 4000);
+                setInterval(function () {
+                    $(".kaostyle-4-2-2").fadeOut(1100).fadeIn(200);
+                }, 5000);
+                setInterval(function () {
+                    msg();
+                }, 200)
+                function msg() {
+                    var ys = $(".animt-peop-li2")
+                    if (!($(ys).is(":animated"))) {
+                        $(ys).animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
+                                .animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
+                                .animate({"top": "-1.5rem",}, 200).animate({"top": "-1.4rem",}, 200)
+                        //.animate({"top":"-1px",},200).animate({"top":"-0px",},200);
+                    }
                 }
-            }
-
+            }, 1000);
         });
     });
 </script>
@@ -1011,32 +1023,35 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".imgbtn3").click(function () {
-            $(".page3").hide();
-            $(".page4").show();
             setTimeout(function () {
-                $('.guiji').show();
-            }, 500);
-            setTimeout(function () {
-                $('.haizi').show();
-            }, 800);
-            setTimeout(function () {
-                $('.starpng').show();
-            }, 1500);
-            setTimeout(function () {
-                $('.redbg').show();
-            }, 1200);
+                $(".page3").hide();
+                $(".page4").show();
+                setTimeout(function () {
+                    $('.guiji').show();
+                }, 500);
+                setTimeout(function () {
+                    $('.haizi').show();
+                }, 800);
+                setTimeout(function () {
+                    $('.starpng').show();
+                }, 1500);
+                setTimeout(function () {
+                    $('.redbg').show();
+                }, 1200);
 
-            setInterval(function () {
-                msg();
-            }, 200)
-            function msg() {
-                var hz = $(".haizi")
-                if (!($(hz).is(":animated"))) {
-                    $(hz).animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
-                            .animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
-                            .animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
+                setInterval(function () {
+                    msg();
+                }, 200)
+                function msg() {
+                    var hz = $(".haizi")
+                    if (!($(hz).is(":animated"))) {
+                        $(hz).animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
+                                .animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
+                                .animate({"top": "2rem",}, 200).animate({"top": "1.9rem",}, 200)
+                    }
                 }
-            }
+            }, 1000);
+
         });
     });
 </script>
@@ -1044,30 +1059,32 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".imgbtn4").click(function () {
-            $(".page4").hide();
-            $(".page5").show();
             setTimeout(function () {
-                $('.libai').show();
+                $(".page4").hide();
+                $(".page5").show();
+                setTimeout(function () {
+                    $('.libai').show();
+                }, 1000);
+                setTimeout(function () {
+                    $('.wo1').show();
+                }, 2000);
+                setTimeout(function () {
+                    $('.yingzheng').show();
+                }, 3000);
+                setTimeout(function () {
+                    $('.wangzhaojun').show();
+                }, 4000);
+                setTimeout(function () {
+                    $('.wo2').show();
+                }, 5000);
+                setTimeout(function () {
+                    $('.wangwei').show();
+                }, 6000);
+                setTimeout(function () {
+                    $(".page5").hide();
+                    $(".page6").show();
+                }, 8000);
             }, 1000);
-            setTimeout(function () {
-                $('.wo1').show();
-            }, 2000);
-            setTimeout(function () {
-                $('.yingzheng').show();
-            }, 3000);
-            setTimeout(function () {
-                $('.wangzhaojun').show();
-            }, 4000);
-            setTimeout(function () {
-                $('.wo2').show();
-            }, 5000);
-            setTimeout(function () {
-                $('.wangwei').show();
-            }, 6000);
-            setTimeout(function () {
-                $(".page5").hide();
-                $(".page6").show();
-            }, 8000);
         });
     });
 </script>

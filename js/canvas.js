@@ -22,7 +22,7 @@ function beginDraw() {
 }
 function drawing(event) {
     hasCanvas = true;
-  //  console.log('画板已有内容')
+    //  console.log('画板已有内容')
     event.preventDefault();
     if (!mousePress)return;
     var xy = pos(event);
@@ -44,7 +44,7 @@ k = $(window).width() / 750;
 var parentx = ($(window).width() - $(".my_vanvas  ").width()) / 2;
 var parenty = (parseInt($(".my_vanvas  ").css("margin-top")) );
 /*var parentx = $(".my_vanvas")[0].offsetLeft;
-var parenty = $(".my_vanvas")[0].offsetTop;*/
+ var parenty = $(".my_vanvas")[0].offsetTop;*/
 function pos(event) {
     var x, y;
     if (isTouch(event)) {
@@ -84,6 +84,7 @@ function save() {
         $(".canvas_box").hide();
         $(".friends").show();
         $(".friends_list").show();
+        $(".my_btn").show();
         $(".canvas_img").show();
         //debugger;
         var arr = []; //每条朋友圈li距父元素ul的距离
@@ -436,20 +437,27 @@ function save() {
                 }, 4000);
                 setTimeout(function () {
                     $(".like_pop").show();
-                    $(".like_pop").css('top', '8.7rem');
+                    $(".like_pop").css('top', '6.4rem');
                     $(".like_pop .hand").css('margin-left', '1.2rem');
                     $(".like_btn").on("click", function () {
                         $(".like_pop").hide();
                         $(".friends_list ul li .rigth_con .testing_centre .comment").eq(8).find("dt").eq(4).css('visibility', ' visible')
                         setTimeout(function () {
                             $(".friends_list ul li .rigth_con .testing_centre .comment").eq(8).find("dt").eq(5).css('visibility', ' visible');
+                            text9();
                             clearInterval(time2);
                         }, 500);
+
                         setTimeout(function () {
+                            $(".my_btn").addClass("bounceIns")
+                        }, 3000);
+                        $(".my_btn").on("click", function () {
                             $(".canvas_img").hide();
                             $(".my_interact").hide();
+                            $(".my_btn").hide();
                             $(".qr").show()
-                        }, 2000);
+                        })
+
                     })
                 }, 4500);
             }
@@ -472,6 +480,21 @@ function save() {
                     clearInterval(time8)
                 }
                 $(".friends_list ul li .rigth_con .testing_centre .comment").eq(3).find("dt").eq(6).find("i").html(word1.substring(0, index1++))
+            }
+
+            time8 = setInterval(type, 100);
+        }
+
+        function text9() {
+            var index1 = 0;
+            var word1 = $(".bb").html();
+            var maxlength1 = word1.length;
+
+            function type() {
+                if (index1 > maxlength1) {
+                    clearInterval(time8)
+                }
+                $(".friends_list ul li .rigth_con .testing_centre .comment").eq(8).find("dt").eq(5).find("i").eq(1).html(word1.substring(0, index1++))
             }
 
             time8 = setInterval(type, 100);

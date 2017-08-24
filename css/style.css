@@ -18,7 +18,6 @@ html{;font-size:625%}
 }
 .background{
 	background: url(../img/bg-1.png) no-repeat;
-	background-size:cover;
 	background-size:100% 100%;
 	overflow:hidden;
 }
@@ -44,33 +43,33 @@ html{;font-size:625%}
 	position: absolute;
 	width: 4.6rem;
 	right: 0.1rem;
-	top: -1.5rem;
+	top: -2rem;
 }
 .animt-peop-wo{
     position: absolute;
     right: 1.35rem;
-    top: 0.8rem;
+    top: 0.35rem;
     width: 0.4rem;
     display: none;
 }
 .animt-peop-shi{
 	position: absolute;
     right: 0.95rem;
-    top: 0.9rem;
+    top: 0.5rem;
     width: 0.4rem;
     display: none;
 }
 .animt-peop-lipng{
 	position: absolute;
     right: 0.65rem;
-    top: 0.8rem;
+    top: 0.28rem;
     width: 0.4rem;
     display: none;
 }
 .animt-peop-bai{
 	position: absolute;
     right: 0.35rem;
-    top: 1rem;
+    top: 0.55rem;
     width: 0.4rem;
     display: none;
 }
@@ -91,8 +90,8 @@ html{;font-size:625%}
 .animt-ni{
 	width: 1.8rem;
     position: absolute;
-    top: 2.45rem;
-    left: 1.3rem;
+    top: 2rem;
+    left: 1.5rem;
 }
 .kaostyle-1{
 	width: 0.5rem;
@@ -128,43 +127,46 @@ html{;font-size:625%}
 }
 .kaostyle-6{
     width: 5rem;
-    padding-top: 5.1rem;
+    padding-top: 4.4rem;
 }
 .kaostyle-7{
 	width: 0.4rem;
     position: absolute;
-    top: 6.5rem;
+    top: 5.7rem;
     left: 1.4rem;
 }
 .kaostyle-8{
 	width: 0.4rem;
     position: absolute;
-    top: 7.3rem;
+    top: 6.4rem;
     left: 1.4rem;
 }
 .kaostyle-9{
 	width: 0.4rem;
     position: absolute;
-    top: 8.1rem;
+    top: 7.3rem;
     left: 1.4rem;
 }
 .kaostyle-10{
 	width: 4.1rem;
     position: absolute;
-    top: 6.4rem;
+    top: 5.6rem;
     left: 1.9rem;
 }
 .kaostyle-11{
 	width: 4.1rem;
     position: absolute;
-    top: 7.2rem;
+    top: 6.4rem;
     left: 1.9rem;
 }
 .kaostyle-12{
 	width: 4.1rem;
     position: absolute;
-    top: 8rem;
+    top: 7.2rem;
     left: 1.9rem;
+}
+.erropng{
+	display: none;
 }
 /*首页结束*/
 
@@ -174,7 +176,6 @@ html{;font-size:625%}
 }
 .twobg{
 	background: url(../img/bg-2.png) no-repeat;
-	background-size:cover;
 	background-size:100% 100%;
 	overflow:hidden;
 }
