@@ -33,7 +33,7 @@ html{;font-size:625%}
 .friends_list ul li .rigth_con .testing_centre .content{width:5.7rem;margin-top:.05rem}
 .friends_list ul li .rigth_con .testing_centre .content span{font-size:.24rem;color:#4d5e89;width:5.2rem}
 .friends_list ul li .rigth_con .testing_centre .content img{width:.36rem;height:.26rem}
-.friends_list ul li .rigth_con .testing_centre .content em,.friends_list ul li .rigth_con .testing_centre .times span em{width: 0.42rem;height: 0.36rem;background: url("../images/right1.gif") no-repeat;background-size: 100% 100%;
+.friends_list ul li .rigth_con .testing_centre .content em,.friends_list ul li .rigth_con .testing_centre .times span em{width: 0.42rem;height: 0.36rem;background: url("../img/right1.gif") no-repeat;background-size: 100% 100%;
    position: absolute;display: none}
 .friends_list ul li .rigth_con .testing_centre .interaction .like{font-size:.28rem;margin-top:.26rem;line-height:.46rem;position:relative;border-bottom:.01rem solid #e9e9e9;visibility:hidden}
 .friends_list ul li .rigth_con .testing_centre .interaction .like{background:#f3f3f4;padding-left:.28rem}
@@ -51,11 +51,11 @@ html{;font-size:625%}
 .friends_list ul li .rigth_con .testing_centre .comment dl dt img.expression5{width:.26rem;margin:-.04rem -.05rem 0;height:.26rem}
 .expression_name{width:.36rem;vertical-align:middle;margin:-.04rem -.05rem 0}
 .iocn_2{width:.36rem;height:.26rem;vertical-align:middle}
-.canvas_box{width:100%;height:100%;background:url(../images/canvas_bd.png) no-repeat;background-size:cover;overflow:hidden;margin:0 auto}
+.canvas_box{width:100%;height:100%;background:url(../img/canvas_bd.png) no-repeat;background-size:cover;overflow:hidden;margin:0 auto}
 .my_vanvas{display:block;margin:3.4rem auto 0}
 /*#myCanvas{border:.01rem solid #BFBFBF}*/
-.btn_clean{width:1.71rem;height:1.21rem;background:url(../images/again.png) no-repeat;background-size:100% 100%}
-.btn_save{width:1.7rem;height:1.15rem;background:url(../images/complete.png) no-repeat;background-size:100% 100%}
+.btn_clean{width:1.71rem;height:1.21rem;background:url(../img/again.png) no-repeat;background-size:100% 100%}
+.btn_save{width:1.7rem;height:1.15rem;background:url(../img/complete.png) no-repeat;background-size:100% 100%}
 .operate_btn{width:4.3rem;margin:0 auto}
 .canvas_img{/*background: pink;*/position: fixed;top:3.67rem;right: 0.2rem;display: block;z-index: 9}
 .canvas_img img{width: 1.35rem;}
