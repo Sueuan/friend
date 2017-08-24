@@ -23,7 +23,7 @@ function beginDraw() {
 }
 function drawing(event) {
     hasCanvas = true;
-    console.log('画板已有内容')
+    //console.log('画板已有内容')
     event.preventDefault();
     if (!mousePress)return;
     var xy = pos(event);
@@ -101,6 +101,7 @@ function save() {
                 clearInterval(time);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(0).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(0).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
 
                 /*点赞4*/
@@ -148,6 +149,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(1).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(1).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 /*点赞2*/
                 setTimeout(function () {
@@ -187,6 +189,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(2).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(2).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 /*点赞3*/
                 setTimeout(function () {
@@ -231,6 +234,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(3).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(3).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 //点赞4
                 setTimeout(function () {
@@ -279,6 +283,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(4).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(4).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 //点赞4
                 setTimeout(function () {
@@ -320,6 +325,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(5).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(5).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 //点赞1
                 setTimeout(function () {
@@ -346,6 +352,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(6).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(6).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 //点赞3
                 setTimeout(function () {
@@ -380,6 +387,7 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .content em").eq(7).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .content em").eq(7).css({"background-image":'url("images/right1.gif")'})
                 }, 500);
                 //评论6
                 setTimeout(function () {
@@ -407,6 +415,8 @@ function save() {
                 clearInterval(time2);
                 setTimeout(function () {
                     $(".friends_list ul li .rigth_con .testing_centre .times span em").eq(0).fadeIn();
+                    $(".friends_list ul li .rigth_con .testing_centre .times span em").eq(0).css({"background-image":'url("images/right1.gif")'});
+
                 }, 500);
                 //点赞3
                 setTimeout(function () {

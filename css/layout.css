@@ -33,12 +33,13 @@ html{;font-size:625%}
 .friends_list ul li .rigth_con .testing_centre .content{width:5.7rem;margin-top:.05rem}
 .friends_list ul li .rigth_con .testing_centre .content span{font-size:.24rem;color:#4d5e89;width:5.2rem}
 .friends_list ul li .rigth_con .testing_centre .content img{width:.36rem;height:.26rem}
-.friends_list ul li .rigth_con .testing_centre .content em,.friends_list ul li .rigth_con .testing_centre .times span em{width: 0.42rem;height: 0.36rem;background: url("../images/right.png") no-repeat;background-size: 100% 100%;
+.friends_list ul li .rigth_con .testing_centre .content em,.friends_list ul li .rigth_con .testing_centre .times span em{width: 0.42rem;height: 0.36rem;background: url("../images/right1.gif") no-repeat;background-size: 100% 100%;
    position: absolute;display: none}
 .friends_list ul li .rigth_con .testing_centre .interaction .like{font-size:.28rem;margin-top:.26rem;line-height:.46rem;position:relative;border-bottom:.01rem solid #e9e9e9;visibility:hidden}
 .friends_list ul li .rigth_con .testing_centre .interaction .like{background:#f3f3f4;padding-left:.28rem}
 .friends_list ul li .rigth_con .testing_centre .interaction .like .like_icon{width:.23rem;height:.2rem;margin-top:.12rem;margin-right:.1rem}
 .friends_list ul li .rigth_con .testing_centre .interaction .like .trigon{position:absolute;top:-.08rem;left:.2rem;width:.2rem;height:.08rem}
+.friends_list ul li .rigth_con .trigon2{position:absolute;top:-.08rem;left:.2rem;width:.2rem;height:.08rem}
 .friends_list ul li .rigth_con .testing_centre .interaction .like span{color:#4d5e89;visibility:hidden}
 .friends_list ul li .rigth_con .testing_centre .interaction .like i{visibility:hidden}
 .friends_list ul li .rigth_con .testing_centre .comment dl dt{font-size:.28rem;width:5.48rem;visibility:hidden}
