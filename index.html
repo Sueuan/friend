@@ -14,27 +14,7 @@
 </head>
 <!-- 第一步：首先加载一个微信JS-SDK -->
     <script src="js/jweixin-1.0.0.js"></script>
-    <!-- 第2步：写一些配置 -->
-    <script>
-        function autoPlayAudio() {
-            wx.config({
-                // 配置信息, 即使不正确也能使用 wx.ready
-                debug: false,
-                appId: '',
-                timestamp: 1,
-                nonceStr: '',
-                signature: '',
-                jsApiList: []
-            });
-            wx.ready(function () {
-                var globalAudio = document.getElementById("media");
-                globalAudio.play();
-            });
-        }
-        ;
-        // 解决ios音乐不自动播放的问题
-        autoPlayAudio();
-    </script>
+
     <script>
         //初始化分享参数
         function initShareInfo() {
@@ -124,6 +104,72 @@
         }
     </script>
 <body>
+<script>
+    //初始化分享参数
+    function initShareInfo() {
+        $.ajax({
+            method: "GET",
+            url: 'http://luntan.sunlands.com/community-pc-war/base/getWxJsSign.action',
+            data: {
+                url: encodeURIComponent(location.href.split('#')[0])
+            },
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data)
+                //  wxConfig(data.resultMessage.appId, data.resultMessage.timestamp, data.resultMessage.nonceStr, data.resultMessage.signature);
+                wx.config({
+                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId: "wx79b494663f198825", // 必填，公众号的唯一标识
+                    //  appId: data.resultMessage.appId, // 必填，公众号的唯一标识
+                    timestamp: data.resultMessage.timestamp,  // 必填，生成签名的时间戳
+                    nonceStr: data.resultMessage.nonceStr,  // 必填，生成签名的随机串
+                    signature: data.resultMessage.signature, // 必填，签名，见附录1
+                    jsApiList: [
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage'
+                    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                });
+                wx.ready(function () {
+                    //分享到朋友圈
+                    wx.onMenuShareTimeline({
+
+                        title: "分享标题", // 分享标题
+                        desc: "分享描述", // 分享描述
+                        link: "https://sueuan.github.io/shangde/", // 分享链接
+                        imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
+                        success: function () {
+                            // 用户确认分享后执行的回调函数
+                            alert("分享成功！");
+                        },
+                        cancel: function () {
+                            // 用户取消分享后执行的回调函数
+                            alert("分享失败！");
+                        }
+                    });
+                    //分享给朋友
+                    wx.onMenuShareAppMessage({
+                        title: "分享标题", // 分享标题
+                        desc: "分享描述", // 分享描述
+                        link: "https://sueuan.github.io/shangde/", // 分享链接
+                        imgUrl: "http://share.sunlands.com/images/app-icon.png", // 分享图标
+                        //				type: '', // 分享类型,music、video或link，不填默认为link
+                        //				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                        success: function () {
+                            // 用户确认分享后执行的回调函数
+                            alert("分享成功！");
+                        },
+                        cancel: function () {
+                            // 用户取消分享后执行的回调函数
+                            alert("分享失败！");
+                        }
+                    });
+
+                });
+            }
+        });
+    }
+    initShareInfo()
+</script>
 <script type="text/javascript">
     window._pt_lt = new Date().getTime();
     window._pt_sp_2 = [];
@@ -145,7 +191,28 @@
 <!--音乐-->
 <div id="audio_btn" class="off rotate" data-event="11205" style="display: block;">
     <!--  <audio loop="loop" src="source/1.mp3" id="media"></audio> -->
-    <!--  <audio src="source/music_1.mp3" id="media" autoplay></audio>-->
+      <audio src="source/music_1.mp3" id="media" autoplay></audio>
+    <!-- 第2步：写一些配置 -->
+    <script>
+        function autoPlayAudio() {
+            wx.config({
+                // 配置信息, 即使不正确也能使用 wx.ready
+                debug: true,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function () {
+                var globalAudio = document.getElementById("media");
+                globalAudio.play();
+            });
+        }
+        ;
+        // 解决ios音乐不自动播放的问题
+        autoPlayAudio();
+    </script>
 </div>
 <div style="display: none">那是</div>
 <!--画板-->
