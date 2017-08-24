@@ -437,7 +437,7 @@ function save() {
                 }, 4000);
                 setTimeout(function () {
                     $(".like_pop").show();
-                    $(".like_pop").css('top', '8.7rem');
+                    $(".like_pop").css('top', '7.35rem');
                     $(".like_pop .hand").css('margin-left', '1.2rem');
                     $(".like_btn").on("click", function () {
                         $(".like_pop").hide();
@@ -459,7 +459,7 @@ function save() {
         time = setInterval(scroll, 1);
         function run() {
             $(".canvas_img").css({top: '3.67rem', right: '0.2rem'});
-            $(".canvas_img").show();
+            $(".canvas_img").fadeIn();
             time2 = setInterval(scroll, 1)
         }
 
